@@ -5,19 +5,24 @@ export class StringBuilder {
 
   constructor(...strings: StringType[]) {
     for (const string of strings) {
-      this.add(string);
+      this.#addString(string);
     }
   }
 
-  add(string: StringType) {
-    this.string = this.string.concat(string.toString());
-    return this;
+  toString() {
+    return this.string;
+  }
+
+  add(...strings: StringType[]) {
+    for (const string of strings) {
+      this.#addString(string);
+    }
   }
 
   addIf(maybe: boolean, ...strings: StringType[]) {
     if (maybe) {
       for (const string of strings) {
-        this.add(string);
+        this.#addString(string);
       }
     }
 
@@ -25,17 +30,20 @@ export class StringBuilder {
   }
 
   addTimes(string: StringType, times: number) {
-    const validTimes = times === Math.round(times) && times >= 0;
+    const validTimes = typeof times === 'number'
+      && times === Math.round(times)
+      && times >= 0;
     console.assert(validTimes, 'times should be a non-negative integer');
     if (!validTimes) {
       return this;
     }
 
-    return this.add(string.repeat(times));
+    return this.#addString(string.repeat(times));
   }
 
-  toString() {
-    return this.string;
+  #addString(string: StringType) {
+    this.string = this.string.concat(string.toString());
+    return this;
   }
 }
 
