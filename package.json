@@ -1,0 +1,45 @@
+{
+  "name": "@casd/string-builder",
+  "version": "0.0.1",
+  "description": "Simple string builder",
+  "keywords": [
+    "string builder"
+  ],
+  "homepage": "https://cdijkman.nl/",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casdijkman/string-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/casdijkman/string-builder/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "xo --space"
+  },
+  "devDependencies": {
+    "@types/xo": "^0",
+    "typescript": "^5.8.3",
+    "xo": "^0.60.0"
+  },
+  "packageManager": "yarn@4.6.0",
+  "xo": {
+    "ignores": [
+      "dist"
+    ],
+    "rules": {
+      "@typescript-eslint/object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "@typescript-eslint/ban-types": "off"
+    }
+  }
+}
