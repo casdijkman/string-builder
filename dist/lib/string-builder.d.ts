@@ -1,10 +1,12 @@
 type StringType = string | String;
 export declare class StringBuilder {
     #private;
-    string: string;
+    strings: string[];
     constructor(...strings: StringType[]);
-    toString(): string;
-    add(...strings: StringType[]): void;
+    toString({ joiner }?: {
+        joiner?: string | undefined;
+    }): string;
+    add(...strings: StringType[]): this;
     addIf(maybe: boolean, ...strings: StringType[]): this;
     addTimes(string: StringType, times: number): this;
 }

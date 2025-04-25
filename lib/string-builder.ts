@@ -1,7 +1,7 @@
 type StringType = string | String;
 
 export class StringBuilder {
-  string = '';
+  strings: string[] = [];
 
   constructor(...strings: StringType[]) {
     for (const string of strings) {
@@ -9,14 +9,16 @@ export class StringBuilder {
     }
   }
 
-  toString() {
-    return this.string;
+  toString({ joiner = '' } = {}) {
+    return this.strings.join(joiner);
   }
 
   add(...strings: StringType[]) {
     for (const string of strings) {
       this.#addString(string);
     }
+
+    return this;
   }
 
   addIf(maybe: boolean, ...strings: StringType[]) {
@@ -42,7 +44,7 @@ export class StringBuilder {
   }
 
   #addString(string: StringType) {
-    this.string = this.string.concat(string.toString());
+    this.strings.push(string.toString());
     return this;
   }
 }

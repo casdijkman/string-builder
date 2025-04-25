@@ -11,18 +11,19 @@ exports.default = stringBuilder;
 class StringBuilder {
     constructor(...strings) {
         _StringBuilder_instances.add(this);
-        this.string = '';
+        this.strings = [];
         for (const string of strings) {
             __classPrivateFieldGet(this, _StringBuilder_instances, "m", _StringBuilder_addString).call(this, string);
         }
     }
-    toString() {
-        return this.string;
+    toString({ joiner = '' } = {}) {
+        return this.strings.join(joiner);
     }
     add(...strings) {
         for (const string of strings) {
             __classPrivateFieldGet(this, _StringBuilder_instances, "m", _StringBuilder_addString).call(this, string);
         }
+        return this;
     }
     addIf(maybe, ...strings) {
         if (maybe) {
@@ -45,7 +46,7 @@ class StringBuilder {
 }
 exports.StringBuilder = StringBuilder;
 _StringBuilder_instances = new WeakSet(), _StringBuilder_addString = function _StringBuilder_addString(string) {
-    this.string = this.string.concat(string.toString());
+    this.strings.push(string.toString());
     return this;
 };
 function stringBuilder(...strings) {
