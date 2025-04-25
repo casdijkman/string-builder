@@ -23,10 +23,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@casd/expect@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@casd/expect@npm:0.0.5"
+  checksum: 10c0/1409c0e028f998cde6d89b86fadd33ea784d490ee70dffbefdc17a9f60604bb71e76bbaac27a5a5763837927e0fae5352b4c7c4c86a380bba7bca10e56fed8f6
+  languageName: node
+  linkType: hard
+
 "@casd/string-builder@workspace:.":
   version: 0.0.0-use.local
   resolution: "@casd/string-builder@workspace:."
   dependencies:
+    "@casd/expect": "npm:^0.0.5"
+    "@types/node": "npm:^22.15.2"
     "@types/xo": "npm:^0"
     typescript: "npm:^5.8.3"
     xo: "npm:^0.60.0"
@@ -207,6 +216,15 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 10c0/6bf5337bc447b706bb5b4431d37686aa2ea6d07cfd6f79cc31de80170d6ff9b1c7384a9c0ccbc45b3f512bae9e9f75c2e12109806a15331dc94e8a8db6dbb4ac
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.15.2":
+  version: 22.15.2
+  resolution: "@types/node@npm:22.15.2"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/39da31d5fc63b14fabd217bb8a921c4a7fc3d99f233440209f9fc2d5d736e8773f7efc65223e2fd0e8db8390b0baab9c0cd2e951c2ece8b237f07313ab3cf295
   languageName: node
   linkType: hard
 
@@ -3901,6 +3919,13 @@ __metadata:
   version: 0.1.2
   resolution: "unc-path-regex@npm:0.1.2"
   checksum: 10c0/bf9c781c4e2f38e6613ea17a51072e4b416840fbe6eeb244597ce9b028fac2fb6cfd3dde1f14111b02c245e665dc461aab8168ecc30b14364d02caa37f812996
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 

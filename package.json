@@ -14,13 +14,17 @@
   "bugs": {
     "url": "https://github.com/casdijkman/string-builder/issues"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/lib/string-builder.js",
+  "types": "dist/lib/string-builder.d.ts",
   "scripts": {
     "build": "tsc",
+    "test": "yarn lint && yarn test:only",
+    "test:only" : "yarn build && node dist/test/index.js",
     "lint": "xo --space"
   },
   "devDependencies": {
+    "@casd/expect": "^0.0.5",
+    "@types/node": "^22.15.2",
     "@types/xo": "^0",
     "typescript": "^5.8.3",
     "xo": "^0.60.0"
