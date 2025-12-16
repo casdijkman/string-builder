@@ -44,7 +44,7 @@ export class StringBuilder {
   }
 
   #addString(string: StringType) {
-    this.strings.push(string.toString());
+    this.strings.push(String(string));
     return this;
   }
 }

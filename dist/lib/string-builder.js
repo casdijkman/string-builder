@@ -46,7 +46,7 @@ class StringBuilder {
 }
 exports.StringBuilder = StringBuilder;
 _StringBuilder_instances = new WeakSet(), _StringBuilder_addString = function _StringBuilder_addString(string) {
-    this.strings.push(string.toString());
+    this.strings.push(String(string));
     return this;
 };
 function stringBuilder(...strings) {
