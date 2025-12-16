@@ -1,6 +1,6 @@
 {
   "name": "@casd/string-builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple string builder",
   "keywords": [
     "string builder"
@@ -19,7 +19,7 @@
   "scripts": {
     "build": "tsc",
     "test": "yarn lint && yarn test:only",
-    "test:only" : "yarn build && node dist/test/index.js",
+    "test:only": "yarn build && node dist/test/index.js",
     "lint": "xo --space"
   },
   "devDependencies": {
