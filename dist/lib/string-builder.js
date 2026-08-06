@@ -4,10 +4,14 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 var _StringBuilder_instances, _StringBuilder_addString;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sb = exports.StringBuilder = void 0;
 exports.default = stringBuilder;
+const string_format_1 = __importDefault(require("string-format"));
 class StringBuilder {
     constructor(...strings) {
         _StringBuilder_instances.add(this);
@@ -34,14 +38,16 @@ class StringBuilder {
         return this;
     }
     addTimes(string, times) {
-        const validTimes = typeof times === 'number'
-            && times === Math.round(times)
-            && times >= 0;
+        const validTimes = typeof times === 'number' && times === Math.round(times) && times >= 0;
         console.assert(validTimes, 'times should be a non-negative integer');
         if (!validTimes) {
             return this;
         }
         return __classPrivateFieldGet(this, _StringBuilder_instances, "m", _StringBuilder_addString).call(this, string.repeat(times));
+    }
+    format(...arguments_) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        return (0, string_format_1.default)(this.toString(), ...arguments_);
     }
 }
 exports.StringBuilder = StringBuilder;

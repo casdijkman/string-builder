@@ -20,12 +20,18 @@
     "build": "tsc",
     "test": "yarn lint && yarn test:only",
     "test:only": "yarn build && node dist/test/index.js",
-    "lint": "xo"
+    "lint": "xo",
+    "format": "prettier --write lib/ test/"
+  },
+  "dependencies": {
+    "string-format": "^2.0.0"
   },
   "devDependencies": {
     "@casd/expect": "^0.0.5",
     "@types/node": "^22.15.2",
+    "@types/string-format": "^2",
     "@types/xo": "^0",
+    "prettier": "^3.9.6",
     "typescript": "^5.8.3",
     "xo": "^0.60.0"
   },

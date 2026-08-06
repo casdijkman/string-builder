@@ -36,7 +36,10 @@ __metadata:
   dependencies:
     "@casd/expect": "npm:^0.0.5"
     "@types/node": "npm:^22.15.2"
+    "@types/string-format": "npm:^2"
     "@types/xo": "npm:^0"
+    prettier: "npm:^3.9.6"
+    string-format: "npm:^2.0.0"
     typescript: "npm:^5.8.3"
     xo: "npm:^0.60.0"
   languageName: unknown
@@ -232,6 +235,13 @@ __metadata:
   version: 2.4.4
   resolution: "@types/normalize-package-data@npm:2.4.4"
   checksum: 10c0/aef7bb9b015883d6f4119c423dd28c4bdc17b0e8a0ccf112c78b4fe0e91fbc4af7c6204b04bba0e199a57d2f3fbbd5b4a14bf8739bf9d2a39b2a0aad545e0f86
+  languageName: node
+  linkType: hard
+
+"@types/string-format@npm:^2":
+  version: 2.0.3
+  resolution: "@types/string-format@npm:2.0.3"
+  checksum: 10c0/c712b7ec9248d59c0c9c36d1f9c5119d8d2267c1d293956412c1886e75e80e8633e952fb12663ed58537eae530443b940077a371ee8325b814eea5eaa0d52307
   languageName: node
   linkType: hard
 
@@ -3165,6 +3175,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^3.9.6":
+  version: 3.9.6
+  resolution: "prettier@npm:3.9.6"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/9f7ddae234035868f3daab3dc34e6de7e54622185afb017378029f0c09a9c023248ccf6f34def0b17a0538e18c47aa1b3188bab72965d1bf735919baa0747e99
+  languageName: node
+  linkType: hard
+
 "pretty-ms@npm:^9.0.0":
   version: 9.2.0
   resolution: "pretty-ms@npm:9.2.0"
@@ -3589,6 +3608,13 @@ __metadata:
   version: 3.0.21
   resolution: "spdx-license-ids@npm:3.0.21"
   checksum: 10c0/ecb24c698d8496aa9efe23e0b1f751f8a7a89faedcdfcbfabae772b546c2db46ccde8f3bc447a238eb86bbcd4f73fea88720ef3b8394f7896381bec3d7736411
+  languageName: node
+  linkType: hard
+
+"string-format@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "string-format@npm:2.0.0"
+  checksum: 10c0/7bca13ba9f942f635c74d637da5e9e375435cbd428f35eeef28c3a30f81d4e63b95ff2c6cca907d897dd3951bbf52e03e3b945a0e9681358e33bd67222436538
   languageName: node
   linkType: hard
 

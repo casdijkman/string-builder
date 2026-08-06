@@ -1,3 +1,5 @@
+import formatString from 'string-format';
+
 type StringType = string | String;
 
 export class StringBuilder {
@@ -32,15 +34,18 @@ export class StringBuilder {
   }
 
   addTimes(string: StringType, times: number) {
-    const validTimes = typeof times === 'number'
-      && times === Math.round(times)
-      && times >= 0;
+    const validTimes = typeof times === 'number' && times === Math.round(times) && times >= 0;
     console.assert(validTimes, 'times should be a non-negative integer');
     if (!validTimes) {
       return this;
     }
 
     return this.#addString(string.repeat(times));
+  }
+
+  format(...arguments_: any[]) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    return formatString(this.toString(), ...arguments_);
   }
 
   #addString(string: StringType) {
